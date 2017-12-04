@@ -1,7 +1,13 @@
 import math
+import numpy
 
 def main():    
    
+    num = 312051
+
+
+    # Task 1
+
     # 1 8 16 24 32 ...
     #
     #
@@ -26,8 +32,6 @@ def main():
     # 42 21  22  23  24  25 26
     # 43 44  45  46  47  48 49
     
-    num = 312051
-
     square_index = math.ceil(math.ceil(-0.5 + math.sqrt(num/4)))
         
     numbers_of_elements_side = square_index * 2 + 1
@@ -51,6 +55,31 @@ def main():
         y = abs(right_up - numbers_of_elements_side // 2 - num)
        
     print(x+y)
+
+    # Task 2
+    num_of_squares = math.ceil(math.ceil(-0.5 + math.sqrt(num/4))) + 1
+    numbers_of_elements_side = num_of_squares * 2 - 1 
+
+
+
+    matrix = numpy.empty((numbers_of_elements_side,numbers_of_elements_side), dtype=int)
+
+    print(matrix)
+
+    x = numbers_of_elements_side // 2
+    y = numbers_of_elements_side // 2
+    dx = 1
+    dy = 0
+
+    #Init center
+    matrix[x][y] = 1
+
+    while matrix[x][y] <= num:
+        #Loop over every cell and call the right thing. 
+        #Keep track of edges 
+
+    
+
 def is_between(num,smaller,bigger):
     return smaller <= num <= bigger
 
